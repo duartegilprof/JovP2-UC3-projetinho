@@ -1,0 +1,107 @@
+:root {
+	--mt-escuro: #293B40;
+	--escuro: #577D86;
+	--claro: #B9EDDD;
+	--verde: #87CBB9;
+	--azul: #569DAA;
+}
+
+/* Ajustes gerais */
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: helvetica, sans-serif;
+	background: var(--claro); /* Colunas laterais */
+}
+
+/* Cabeçalho e rodapé */
+header, footer {
+	width: 100%;
+	padding: 30px;
+	overflow: hidden;
+	text-align: center;
+	background: var(--verde);
+	color: var(--mt-escuro);
+}
+footer {
+	text-align: right;
+	padding-top: 100px;
+	color: var(--escuro);
+}
+
+/* Barra de navegação */
+#navbar {
+	width: 100%;
+	overflow: hidden;
+	background: var(--escuro);
+}
+#navbar ul {
+	list-style-type: none; /* Tira as bolinhas */
+	margin: 0;
+	padding: 0;
+}
+#navbar ul li {
+	float: left; /* Pra ficar um do lado do outro */
+}
+#navbar ul li a {
+	text-decoration: none; /* Tira formatação de link */
+	padding: 14px 16px;
+	display: block;
+	color: var(--verde);
+}
+#navbar ul li a:hover {
+	color: var(--escuro);
+	background: var(--verde);
+}
+
+/* Colunas laterais */
+.coluna {
+	width: 20%;
+	padding: 20px;
+	float: left;
+	/* background no body */
+}
+.coluna a { /*Link não visitado*/
+	color: var(--azul);
+}
+.coluna a:visited { /*Link visitado*/
+	color: var(--escuro);
+}
+
+/* Coluna central */
+article {
+	width: 60%;
+	padding: 20px;
+	float: left;
+	background: white;
+}
+article p {
+	text-align: justify;
+}
+#main-banner {
+	width: 100%;
+}
+
+/* Responsivo */
+
+/* Telas médias */
+@media screen and (max-width: 800px) {
+	.coluna {
+		width: 30%;
+	}
+	article {
+		width: 70%;
+	}
+}
+
+/* Telas pequenas */
+@media screen and (max-width: 600px) {
+	.coluna {
+		width: 100%;
+	}
+	article {
+		width: 100%;
+	}
+}
