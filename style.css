@@ -1,10 +1,10 @@
 :root {
-	--mt-escuro: #293B40;
-	--escuro: #577D86;
-	--claro: #B9EDDD;
-	--verde: #87CBB9;
-	--azul: #569DAA;
-}
+	--bege: #FAF2D3;
+	--amarelo: #F4E869;
+	--azulescuro: #3085C3;
+	--azulclaro: #5CD2E6;
+}	
+
 
 /* Ajustes gerais */
 * {
@@ -12,8 +12,19 @@
 }
 body {
 	margin: 0;
-	font-family: helvetica, sans-serif;
-	background: var(--claro); /* Colunas laterais */
+	font-family: helvetica, sans-serif; 
+	background: var(--azulclaro);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: wrap;
 }
 
 /* Cabeçalho e rodapé */
@@ -22,77 +33,85 @@ header, footer {
 	padding: 30px;
 	overflow: hidden;
 	text-align: center;
-	background: var(--verde);
-	color: var(--mt-escuro);
+	background: var(--azulescuro);
+	color: black;
 }
 footer {
 	text-align: right;
 	padding-top: 100px;
-	color: var(--escuro);
+	color: black;
 }
 
 /* Barra de navegação */
 #navbar {
 	width: 100%;
 	overflow: hidden;
-	background: var(--escuro);
+	background: var(--azulescuro);
 }
 #navbar ul {
 	list-style-type: none; /* Tira as bolinhas */
 	margin: 0;
 	padding: 0;
+	
 }
 #navbar ul li {
 	float: left; /* Pra ficar um do lado do outro */
 }
 #navbar ul li a {
-	text-decoration: none; /* Tira formatação de link */
+	text-decoration: none;
 	padding: 14px 16px;
 	display: block;
-	color: var(--verde);
+	color: black;
+	background: var(--azulescuro);
 }
 #navbar ul li a:hover {
-	color: var(--escuro);
-	background: var(--verde);
+	color: black;
+	background: var(--azulclaro);
 }
 
-/* Colunas laterais */
+/* Coluna Laterais */
 .coluna {
 	width: 20%;
 	padding: 20px;
 	float: left;
-	/* background no body */
-}
-.coluna a { /*Link não visitado*/
-	color: var(--azul);
-}
-.coluna a:visited { /*Link visitado*/
-	color: var(--escuro);
+
 }
 
-/* Coluna central */
+/* Coluna Central */
 article {
 	width: 60%;
-	padding: 20px;
+	padding: 20px 15%;
 	float: left;
-	background: white;
-}
-article p {
+	background: var(--bege);
 	text-align: justify;
 }
-#main-banner {
-	width: 100%;
+
+article img {
+	width: 40%;
+	display: block;
+	margin: auto;
 }
 
-/* Responsivo */
 
-/* Telas médias */
-@media screen and (max-width: 800px) {
+/*responsivo*/
+@media screen and (max-width: 1200px) {
+	article	{
+		padding: 20px 10%;
+	}
+}
+
+/*telas médias*/
+@media screen and (max-width: 1000px) {
 	.coluna {
 		width: 30%;
 	}
-	article {
+
+	article{
 		width: 70%;
+		padding: 20px;
+	}
+	aside.coluna {
+		display: none;
 	}
 }
 
@@ -100,8 +119,10 @@ article p {
 @media screen and (max-width: 600px) {
 	.coluna {
 		width: 100%;
+		display: none;
 	}
-	article {
+
+	article{
 		width: 100%;
 	}
 }
